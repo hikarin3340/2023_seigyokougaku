@@ -14,7 +14,7 @@ T = 1 / (2 * %pi * 140 * sqrt(alpha));
 C = K* (1 +  alpha * T * s) / (1 + T * s);
 P = Kt/( L*J*s^3 + (R*J + L*mu)*s^2 + (R*mu + Ke * Kt)*s );
 L = P * C;
-Y = L / (1 + L);
+Y = L/.(1);
 c_sys = syslin('c', L);
 
 [gm,  fp] = g_margin(c_sys);

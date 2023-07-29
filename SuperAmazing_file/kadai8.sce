@@ -5,15 +5,16 @@ mu = 9.0 * 10^(-5);
 Kt = 0.47;
 Ke = 4.9 * 10^(-3);
 
-K = 3.5;
-alpha = 0.3;
+K = 10.88;
+alpha = 0.1;
 
-T = 8 / (2 * %pi * 26 * alpha);
-C = K* (1 + alpha * T * s) / (1 + T * s);
+//T = 8 / (26 * alpha);
+T = 8 / (2 * %pi * 26 * alpha); //
+C = K* (1 + alpha * T * s) / (1 + T * s); //タクシを信じる
 
 P = Kt/( L*J*s^3 + (R*J + L*mu)*s^2 + (R*mu + Ke * Kt)*s );
 L = P * C;
-Y = L / (1 + L);
+Y = L/.(1);
 c_sys = syslin('c', L);
 
 printf("α:%f\r\n", alpha);

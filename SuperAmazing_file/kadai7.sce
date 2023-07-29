@@ -8,7 +8,7 @@ C = 10^(0.2);
 
 P = Kt/( L*J*s^3 + (R*J + L*mu)*s^2 + (R*mu + Ke * Kt)*s );
 L = P * C;
-Y = L / (1 + L);
+Y = L/.(1);
 c_sys = syslin('c', L);
 
 [gm,  fp] = g_margin(c_sys);
